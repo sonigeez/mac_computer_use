@@ -72,13 +72,14 @@ SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
   - Can handle JavaScript-heavy applications
   - Capable of screenshots, navigation, and interaction
   - Handles dynamic content loading
-
-* System automation:
-  - cliclick for simulating mouse/keyboard input
-  - osascript for AppleScript commands
-  - launchctl for managing services
-  - defaults for reading/writing system preferences
-
+  
+* Browser automation available via Playwright:
+  - chrome shortcuts
+    - command + t -> new tab
+    - command + w -> close tab
+    
+* Use osascript with bash to execute all shortcuts and possible task
+    
 * Development tools:
   - Standard Unix/Linux command line utilities
   - Git for version control
@@ -91,6 +92,11 @@ SYSTEM_PROMPT = f"""<SYSTEM_CAPABILITY>
   - Stream processing with awk, sed, and other text utilities
 
 * Note: Command line function calls may have latency. Chain multiple operations into single requests where feasible.
+
+whenever use to simulate mouse movement, use the following format:
+
+* Mouse movement: Move the mouse pointer to the position (x, y) on the screen.
+use (532, 155) not [532, 155]
 
 * The current date is {datetime.today().strftime('%A, %B %-d, %Y')}.
 </SYSTEM_CAPABILITY>"""
